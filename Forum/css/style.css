@@ -1,0 +1,108 @@
+@import url(../../Public/css/style.css);
+.mt-top{
+    margin-top: 80px;
+}
+
+
+
+
+/******************************   Forum du site       **********************
+
+*****************************************************************************/
+.forum-btn-creer-topic{
+    background-color: slategrey;
+    height: 45px;
+    width:170px;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid slategrey;
+}
+.forum-input{
+    border-bottom: 2px solid slategrey;
+    height: 45px;
+    width: 100%;
+    border: 1px solid rgba(128, 128, 128, 0.26);
+    border-radius: 5px;
+    outline: none;
+    border-bottom: 2px solid slategrey;
+    transition: 0.2s;
+}
+.langages{
+    border: 1px solid rgba(128, 128, 128, 0.295);
+    border-radius: 5px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+}
+.langages span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    display: block;
+    margin: 10px;
+    font-weight: bold;
+    opacity: 0.8;
+}
+.langages a{
+    display: block;
+    width: 95%;
+    margin:3px auto;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.5s;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.7;
+    font-weight: bold;
+}
+.langages a:nth-of-type(even){
+    background-color: rgba(128, 128, 128, 0.233);
+}
+.langages a:hover{
+    transition: 0.5s;
+    background-color: rgba(128, 128, 128, 0.233);
+}
+/*********************  login ou sing up ************************/
+
+.login-centre{
+    background-color: rgba(128, 128, 128, 0.068);
+    width: 35%;
+    margin:50px auto;
+}
+[for*="au"]{
+    display: block;
+    text-align: left;
+    margin-left: 2%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.login-logo{
+    height: 50px;
+    width: 80px;
+    margin: auto;
+}
+.login-btn{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #29d;
+   color: white;
+   border: 1px solid #29d;
+   border-radius: 5px;
+   display: block;
+   height: 30px;
+   width: 98%;
+   margin:15px auto;
+}
+.check-login{
+    width: 20px;
+    height: 20px;
+    background-color: #29d !important;
+    color: #29d;
+}
+.login-creer{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    text-align: center;
+    display: block;
+}
