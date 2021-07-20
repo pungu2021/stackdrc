@@ -1,6 +1,15 @@
 <?php
   require "header.php";
   require "Controllers/Controllers_Inscription.php";
+  if(isset($_SESSION["stackdrc_gmail"]) and !empty($_SESSION["stackdrc_gmail"])){
+    $_SESSION["stackdrc_gmail"];
+  }
+  else if(isset($_COOKIE["stackdrc_gmail"])and !empty($_COOKIE["stackdrc_gmail"])){
+    $_SESSION["stackdrc_gmail"]=$_COOKIE["stackdrc_gmail"];
+}
+ if(isset( $_SESSION["stackdrc_gmail"])){
+   header("location:index.php");
+ }
 ?>
    <div class="container mt-top">
          <div class="login-bloc">

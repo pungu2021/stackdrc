@@ -13,3 +13,7 @@ Autoload::Chargement_Classe();
 /**instanciation des objets  de nos classe  */
 $mybloc= new Bloc();
 $data=$mybloc->Afficher_Astuces();
+function photo($gmail){
+    global $mybloc;
+     return $mybloc->getInfo_USER($gmail);
+   }

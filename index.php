@@ -1,6 +1,6 @@
 <?php
 session_start();
-    require "./Controllers/ControllerBloc.php";
+require "./Controllers/ControllerBloc.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -123,8 +123,8 @@ session_start();
                     <form action="" class="myform">
                         <input type="search" name="key" id="" placeholder="Recherche" class="textbox-recherche">
                     </form>
-                    <button class="inscrire">S'inscrire</button>
-                    <button class="connexion">Connexion</button>
+                 <a href="inscription"><button class="inscrire">S'inscrire</button></a>
+                <a href="login"><button class="connexion">Connexion</button></a>
             </div>
          
         <!-- Rejoindre la plateforme -->

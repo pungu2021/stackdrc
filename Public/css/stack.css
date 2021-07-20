@@ -300,8 +300,14 @@ LOGIN DU SITE
     font-size: 18px !important;
     word-wrap: break-word;
 }
-
-
+/*image nav pour user*/
+.user-photo{
+   position: fixed;
+   right: 250px;
+   top: 5px;
+   height: 50px;
+   cursor: pointer;
+}
 
 /*Media queries */
 @media (max-width:768px) {

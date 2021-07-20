@@ -41,6 +41,27 @@
            <span>Développer avec <span style="color:tomato">♥</span> by <span style="color:#029dbe">carlos pungu</span> &copy copyright 2019 - <?php echo date("Y")?></span>
        </div>
     </div>
+    <!-- barre de recherche , inscription  -->
+    <div class="stackdrc-index">
+         <form action="" class="myform">
+              <input type="search" name="key" id="" placeholder="Recherche" class="textbox-recherche">
+         </form>
+          <?php if(isset( $_SESSION["stackdrc_gmail"]) and !empty( $_SESSION["stackdrc_gmail"])){
+                   $monPicture=photo($_SESSION["stackdrc_gmail"]);
+                 echo '
+                    <figure>
+                        <img src="Public/imageUser/'.$monPicture[0]["photo"] .'" alt="" class="stackder-lire-image-publier user-photo">
+                   </figure>
+                       '; 
+          }
+          else{
+              echo '
+              <a href="inscription.php"><button class="inscrire">S\'inscrire</button></a>
+              <a href="login.php"><button class="connexion">Connexion</button></a>';
+          }
+          ?>
+       
+        </div>
     <script src="public/js/stack.js"></script>
     <script src="public/js/stackdrc.js"></script>
 </body>

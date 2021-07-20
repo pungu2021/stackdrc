@@ -1,6 +1,11 @@
-<?php 
+<?php
+
+
 session_start();
-if(isset($_COOKIE["stackdrc_gmail"])and !empty($_COOKIE["stackdrc_gmail"])){
+  if(isset($_SESSION["stackdrc_gmail"]) and !empty($_SESSION["stackdrc_gmail"])){
+    $_SESSION["stackdrc_gmail"];
+  }
+  else if(isset($_COOKIE["stackdrc_gmail"])and !empty($_COOKIE["stackdrc_gmail"])){
     $_SESSION["stackdrc_gmail"]=$_COOKIE["stackdrc_gmail"];
 }
 ?>
@@ -29,10 +34,4 @@ if(isset($_COOKIE["stackdrc_gmail"])and !empty($_COOKIE["stackdrc_gmail"])){
               </ul>
           </nav>
     </header>
-    <div class="stackdrc-index">
-         <form action="" class="myform">
-              <input type="search" name="key" id="" placeholder="Recherche" class="textbox-recherche">
-         </form>
-       <a href="inscription.php"><button class="inscrire">S'inscrire</button></a>
-             <a href="login.php"><button class="connexion">Connexion</button></a>
-        </div>
+

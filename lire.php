@@ -49,7 +49,7 @@ require "Controllers/ControllerLireArticle.php";
                   ?>
                      <figure>
                          <img src="Public/imageUser/<?= $myPicture[0]["photo"] ?>" alt="" class="stackder-lire-image-publier">
-                         <span style="color: #029dbe;font-family:Arial, Helvetica, sans-serif;font-size:17px;font-weight:bold;"> <?= $com["auteur"]?></span>
+                         <span style="color: #029dbe;font-family:Arial, Helvetica, sans-serif;font-size:17px;font-weight:bold;margin-left:20px"> <?= $com["auteur"]?></span>
                      </figure>
                      <p class="stack-lire-message-reondre-commentaire">
                          <span class="enswer"><?= $mybloc->ilya(date("Y-m-d H:i:s"), $com["date_pub"]) ?> <a href="#<?= 'slider-'.$i ?>" class="<?= 'slider-'.$i ?>"> Repondre <img src="Public/images/left.png" alt="repondre" class="reply-lire-icon"></a></span> <br>
@@ -66,7 +66,7 @@ require "Controllers/ControllerLireArticle.php";
                                 
                              <figure>
                                 <img src="Public/imageUser/<?= $mPicture[0]["photo"] ?>" alt="" class="stackder-lire-image-publier">
-                                <span style="color: #029dbe;font-family:Arial, Helvetica, sans-serif;font-size:17px;font-weight:bold;"><?= $reponse["auteur"]?> </span>
+                                <span style="color: #029dbe;font-family:Arial, Helvetica, sans-serif;font-size:17px;font-weight:bold;margin-left:20px">by <?= $reponse["auteur"]?> </span>
                             </figure>
                             <p class="stack-lire-message-reondre-commentaire">
                                 <span class="enswer"><?= $mybloc->ilya(date("Y-m-d H:i:s"), $reponse["date_pub"]) ?>  <a href="#<?= 'slider-'.$i ?>" class="<?= 'slider-'.$i ?>"> Repondre <img src="Public/images/left.png" alt="repondre" class="reply-lire-icon"></a></span> <br>
