@@ -91,6 +91,7 @@ class Bloc{
      * Fonction il ya 
      */
     public function ilya($date_now,$date_enre){
+
              // declaration de deux variables date
                 $date1=strtotime($date_now);
                 $date2=strtotime($date_enre);
@@ -131,5 +132,11 @@ class Bloc{
 
      public function separation_string($chaine){
          return str_replace(' ','-',$chaine);
+     }
+     public function getInfo_USER($gmai){
+         $sql="SELECT * FROM inscription WHERE gmail =?";
+         $req=Connexion::getPdo()->prepare($sql);
+         $req->execute(array($gmai));
+         return $req->fetchAll();
      }
  }

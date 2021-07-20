@@ -1,6 +1,6 @@
 <?php
-require "Controllers/ControllerLireArticle.php";
 require "header.php";
+require "Controllers/ControllerLireArticle.php";
 ?>
  <div class="container lire-top ">
       <div class="row">
@@ -26,20 +26,29 @@ require "header.php";
                         <?= $datas[0]["contenu"];?> 
                   </p>
                   <span class="stack-lire-commentaire">12 Commentaires</span>
+                  <?php 
+                      if(isset($_SESSION["stackdrc_gmail"]) And !empty($_SESSION["stackdrc_gmail"])){ ?>
                   <form id="sub-form-1" method="POST">
-                      <input type="text" name="auteur_commentaire" id="auteur_commentaire" value="Sacre" class="hide-input">
-                      <input type="email" name="gmail_commentaire" id="gmail_commentaire" value="sacre@gmail.com" class="hide-input">
+                      <input type="text" name="auteur_commentaire" id="auteur_commentaire" value="<?=$data_source[0]["pseudo"] ?>" class="hide-input">
+                      <input type="email" name="gmail_commentaire" id="gmail_commentaire" value="<?=$data_source[0]["gmail"] ?>" class="hide-input">
                       <textarea name="message" id="message_commenatire" cols="30" rows="10" class="form-control"></textarea>
                       <button  class="btn-lire-envoyer" id="id_com" name="id_commenaire" value="<?= $_GET["id"];?> ">Envoyer</button>
                   </form>
+                   <?php } 
+                       else{
+                         echo '<div class="participer"> Veux tu participer aux commentaires ? veuillez <a href="inscription">S\'iscrire</a> ou <a href="login">Connecte-toi</a></div>';
+                         //$_SESSION["stackdrc_gmail"]
+                       }
+                   ?>
                   <?php 
                   /** <?php ?> */
                    $i=0;
                       foreach($commenatires as $com){
+                          $myPicture=photo($com["gmail"]);
                     
                   ?>
                      <figure>
-                         <img src="Public/images/aba.png" alt="" class="stackder-lire-image-publier">
+                         <img src="Public/imageUser/<?= $myPicture[0]["photo"] ?>" alt="" class="stackder-lire-image-publier">
                          <span style="color: #029dbe;font-family:Arial, Helvetica, sans-serif;font-size:17px;font-weight:bold;"> <?= $com["auteur"]?></span>
                      </figure>
                      <p class="stack-lire-message-reondre-commentaire">
@@ -51,9 +60,12 @@ require "header.php";
                             <!-- REPONDRE -->
                             <?php 
                                $reponses=$mybloc->getReponse($com["id"]);
-                                foreach($reponses as $reponse ){?>
+                                foreach($reponses as $reponse ){
+                                    $mPicture=photo($reponse["gmail"]);    
+                                ?>
+                                
                              <figure>
-                                <img src="Public/images/aba.png" alt="" class="stackder-lire-image-publier">
+                                <img src="Public/imageUser/<?= $mPicture[0]["photo"] ?>" alt="" class="stackder-lire-image-publier">
                                 <span style="color: #029dbe;font-family:Arial, Helvetica, sans-serif;font-size:17px;font-weight:bold;"><?= $reponse["auteur"]?> </span>
                             </figure>
                             <p class="stack-lire-message-reondre-commentaire">
@@ -62,12 +74,15 @@ require "header.php";
                             </p>
                              <?php }?>
                              <!--FIN RPONDRE  -->
+                             <?php 
+                             if(isset($_SESSION["stackdrc_gmail"]) And !empty($_SESSION["stackdrc_gmail"])){ ?>
                           <form  method="POST" id="<?= 'slider-'.$i ?>" class="<?= 'hide-'.$i ?>">
-                                <input type="text" name="auteur" id="auteur-<?= $i ?>" value="Sacre" class="hide-input">
-                                <input type="email" name="gmail" id="gmail-<?= $i ?>" value="sacre@gmail.com" class="hide-input">
+                                <input type="text" name="auteur" id="auteur-<?= $i ?>" value="<?=$data_source[0]["pseudo"] ?>" class="hide-input">
+                                <input type="email" name="gmail" id="gmail-<?= $i ?>" value="<?=$data_source[0]["gmail"] ?>" class="hide-input">
                                 <textarea name="message" id="message-<?= $i ?>" cols="30" rows="10" class="form-control"></textarea>
                                 <button  class="btn-lire-envoyer" id="reponseCom-<?= $i ?>" value="<?= $com["id"]?>">Envoyer</button>
                           </form>
+                             <?php }?>
                      </div>
                   <?php 
                      $i++;}

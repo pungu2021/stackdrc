@@ -1,3 +1,9 @@
+<?php 
+session_start();
+if(isset($_COOKIE["stackdrc_gmail"])and !empty($_COOKIE["stackdrc_gmail"])){
+    $_SESSION["stackdrc_gmail"]=$_COOKIE["stackdrc_gmail"];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +33,6 @@
          <form action="" class="myform">
               <input type="search" name="key" id="" placeholder="Recherche" class="textbox-recherche">
          </form>
-          <button class="inscrire">S'inscrire</button>
-             <button class="connexion">Connexion</button>
+       <a href="inscription.php"><button class="inscrire">S'inscrire</button></a>
+             <a href="login.php"><button class="connexion">Connexion</button></a>
         </div>
